@@ -17,9 +17,9 @@
   <link rel="alternate" hreflang="x-default" href="https://deltasupplies-eg.com/">
 
   <!-- الأيقونات والـ Favicons الرسمية بالهوية -->
-  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#1F2F3C">
   <meta name="msapplication-TileColor" content="#1F2F3C">
@@ -31,7 +31,7 @@
   <meta property="og:description" content="توريد مستلزمات المصانع، الشركات، الورش، المعدات، ومواد البناء بأعلى مواصفات وأقل سعر وسرعة توصيل حتى باب موقعك.">
   <meta property="og:url" content="https://deltasupplies-eg.com/">
   <meta property="og:site_name" content="دلتا للتوريدات العمومية">
-  <meta property="og:image" content="https://deltasupplies-eg.com/assets/images/og-image.png">
+  <meta property="og:image" content="https://deltasupplies-eg.com/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="شعار وهوية شركة دلتا للتوريدات العمومية">
@@ -40,20 +40,16 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="دلتا للتوريدات العمومية | شريكك في نجاحك">
   <meta name="twitter:description" content="توريد مستلزمات المصانع والشركات والمعدات الثقيلة بكفر الشيخ والدلتا بالمواصفات المطلوبة وأفضل سعر.">
-  <meta name="twitter:image" content="https://deltasupplies-eg.com/assets/images/og-image.png">
+  <meta name="twitter:image" content="https://deltasupplies-eg.com/og-image.png">
 
   <!-- التضمين المسبق للأصول الحيوية لتحسين Core Web Vitals (LCP) -->
-  <link rel="preload" href="assets/images/logo.png" as="image" type="image/png">
-  <link rel="preload" href="assets/images/sectors/about_logistics.webp" as="image" type="image/webp">
+  <link rel="preload" href="logo.png" as="image" type="image/png">
+  <link rel="preload" href="about_logistics.webp" as="image" type="image/webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- ملفات التصميم والأنماط المعيارية -->
-  <link rel="stylesheet" href="assets/css/tokens.css">
-  <link rel="stylesheet" href="assets/css/base.css">
-  <link rel="stylesheet" href="assets/css/components.css">
-  <link rel="stylesheet" href="assets/css/layout.css">
-  <link rel="stylesheet" href="assets/css/animations.css">
+  <!-- ملف التصميم الموحد الرئيسي -->
+  <link rel="stylesheet" href="style.css">
 
   <!-- البيانات المنظمة JSON-LD (Schema.org) للشركة والمجالات والأسئلة الشائعة -->
   <script type="application/ld+json">
@@ -67,8 +63,8 @@
         "legalName": "شركة دلتا للتوريدات العمومية والتجارة",
         "alternateName": "Delta General Supplies",
         "url": "https://deltasupplies-eg.com/",
-        "logo": "https://deltasupplies-eg.com/assets/images/logo.png",
-        "image": "https://deltasupplies-eg.com/assets/images/og-image.png",
+        "logo": "https://deltasupplies-eg.com/logo.png",
+        "image": "https://deltasupplies-eg.com/og-image.png",
         "description": "شريكك الاستراتيجي في توريد مستلزمات المصانع والشركات والمعدات ومواد البناء في كفر الشيخ وبلطيم ومحافظات الدلتا ومصر.",
         "slogan": "جودة في التوريد .. شريكك في نجاحك",
         "foundingDate": "2020",
@@ -218,7 +214,7 @@
       <div class="header-inner">
         <!-- لوجو الشركة الرسمي المعتمد -->
         <a href="#top" class="brand-logo-link" aria-label="الصفحة الرئيسية لشركة دلتا للتوريدات العمومية">
-          <img src="assets/images/logo.png" alt="شعار دلتا للتوريدات العمومية" id="site-logo-img" class="brand-logo-img" width="180" height="78">
+          <img src="logo.png" alt="شعار دلتا للتوريدات العمومية" id="site-logo-img" class="brand-logo-img" width="180" height="78">
         </a>
 
         <!-- قائمة التنقل للديسكتوب -->
@@ -322,7 +318,7 @@
             <div class="hero-graphic-card">
               <!-- صورة أسطول التوريد والمستودعات -->
               <div style="width: 100%; height: 210px; border-radius: var(--radius-sm); overflow: hidden; margin-bottom: var(--space-4); position: relative;">
-                <img src="assets/images/sectors/about_logistics.webp" alt="أسطول شحن ومستودعات دلتا للتوريدات العمومية" style="width: 100%; height: 100%; object-fit: cover;">
+                <img src="about_logistics.webp" alt="أسطول شحن ومستودعات دلتا للتوريدات العمومية" style="width: 100%; height: 100%; object-fit: cover;">
                 <div style="position: absolute; bottom: 8px; inset-inline-start: 8px; background: rgba(16, 27, 36, 0.9); padding: 4px 10px; border-radius: var(--radius-xs); font-size: var(--text-xs); color: var(--color-amber-400); font-weight: bold;">
                   المقر والأسطول الميداني: كفر الشيخ — بلطيم
                 </div>
@@ -547,7 +543,7 @@
           <!-- 01 مقاولات وإنشاءات -->
           <article class="catalog-card reveal-init" data-category-id="contracting-construction" data-group="construction">
             <div class="catalog-img-wrap">
-              <img src="assets/images/sectors/construction.webp" alt="مقاولات وإنشاءات - دلتا للتوريدات العمومية" loading="lazy" width="400" height="250">
+              <img src="construction.webp" alt="مقاولات وإنشاءات - دلتا للتوريدات العمومية" loading="lazy" width="400" height="250">
               <div class="catalog-img-badge">خلال 24 ساعة لموقع العمل</div>
             </div>
 
@@ -579,7 +575,7 @@
           <!-- 02 مصانع وشركات -->
           <article class="catalog-card reveal-init" data-category-id="factories-companies" data-group="industrial">
             <div class="catalog-img-wrap">
-              <img src="assets/images/sectors/industrial.webp" alt="مصانع وشركات - دلتا للتوريدات العمومية" loading="lazy" width="400" height="250">
+              <img src="industrial.webp" alt="مصانع وشركات - دلتا للتوريدات العمومية" loading="lazy" width="400" height="250">
               <div class="catalog-img-badge">جدولة شحن دوري فوري</div>
             </div>
 
@@ -611,7 +607,7 @@
           <!-- 03 معدات وآلات -->
           <article class="catalog-card reveal-init" data-category-id="machinery-equipment" data-group="industrial">
             <div class="catalog-img-wrap">
-              <img src="assets/images/sectors/infrastructure.webp" alt="معدات وآلات - دلتا للتوريدات العمومية" loading="lazy" width="400" height="250">
+              <img src="infrastructure.webp" alt="معدات وآلات - دلتا للتوريدات العمومية" loading="lazy" width="400" height="250">
               <div class="catalog-img-badge">تسليم بالموقع مع الفحص</div>
             </div>
 
@@ -643,7 +639,7 @@
           <!-- 04 كهرباء وتحكم -->
           <article class="catalog-card reveal-init" data-category-id="electrical-automation" data-group="industrial">
             <div class="catalog-img-wrap">
-              <img src="assets/images/sectors/electrical.webp" alt="كهرباء وتحكم - دلتا للتوريدات العمومية" loading="lazy" width="400" height="250">
+              <img src="electrical.webp" alt="كهرباء وتحكم - دلتا للتوريدات العمومية" loading="lazy" width="400" height="250">
               <div class="catalog-img-badge">توريد وشحن في نفس اليوم</div>
             </div>
 
@@ -675,7 +671,7 @@
           <!-- 05 سباكة ومياه وصرف -->
           <article class="catalog-card reveal-init" data-category-id="plumbing-water-drainage" data-group="construction">
             <div class="catalog-img-wrap">
-              <img src="assets/images/sectors/irrigation.webp" alt="سباكة ومياه وصرف - دلتا للتوريدات العمومية" loading="lazy" width="400" height="250">
+              <img src="irrigation.webp" alt="سباكة ومياه وصرف - دلتا للتوريدات العمومية" loading="lazy" width="400" height="250">
               <div class="catalog-img-badge">شحن فوري بالسيارات المجهزة</div>
             </div>
 
@@ -707,7 +703,7 @@
           <!-- 06 مستلزمات زراعية -->
           <article class="catalog-card reveal-init" data-category-id="agricultural-supplies" data-group="agricultural-marine">
             <div class="catalog-img-wrap">
-              <img src="assets/images/sectors/agriculture.webp" alt="مستلزمات زراعية - دلتا للتوريدات العمومية" loading="lazy" width="400" height="250">
+              <img src="agriculture.webp" alt="مستلزمات زراعية - دلتا للتوريدات العمومية" loading="lazy" width="400" height="250">
               <div class="catalog-img-badge">توصيل حتى باب المزرعة</div>
             </div>
 
@@ -739,7 +735,7 @@
           <!-- 07 مستلزمات بحرية -->
           <article class="catalog-card reveal-init" data-category-id="marine-supplies" data-group="agricultural-marine">
             <div class="catalog-img-wrap">
-              <img src="assets/images/sectors/marine.webp" alt="مستلزمات بحرية - دلتا للتوريدات العمومية" loading="lazy" width="400" height="250">
+              <img src="marine.webp" alt="مستلزمات بحرية - دلتا للتوريدات العمومية" loading="lazy" width="400" height="250">
               <div class="catalog-img-badge">تسليم بموانئ البرلس وكفر الشيخ</div>
             </div>
 
@@ -771,7 +767,7 @@
           <!-- 08 مستلزمات الورش -->
           <article class="catalog-card reveal-init" data-category-id="workshop-supplies" data-group="industrial">
             <div class="catalog-img-wrap">
-              <img src="assets/images/sectors/mechanical.webp" alt="مستلزمات الورش - دلتا للتوريدات العمومية" loading="lazy" width="400" height="250">
+              <img src="mechanical.webp" alt="مستلزمات الورش - دلتا للتوريدات العمومية" loading="lazy" width="400" height="250">
               <div class="catalog-img-badge">شحن مباشر للورشة</div>
             </div>
 
@@ -803,7 +799,7 @@
           <!-- 09 خامات صناعية -->
           <article class="catalog-card reveal-init" data-category-id="industrial-raw-materials" data-group="industrial">
             <div class="catalog-img-wrap">
-              <img src="assets/images/sectors/custom.webp" alt="خامات صناعية - دلتا للتوريدات العمومية" loading="lazy" width="400" height="250">
+              <img src="custom.webp" alt="خامات صناعية - دلتا للتوريدات العمومية" loading="lazy" width="400" height="250">
               <div class="catalog-img-badge">جدولة توريد تعاقدية منتظمة</div>
             </div>
 
@@ -835,7 +831,7 @@
           <!-- 10 مستلزمات السلامة المهنية -->
           <article class="catalog-card reveal-init" data-category-id="occupational-safety" data-group="commercial-safety">
             <div class="catalog-img-wrap">
-              <img src="assets/images/sectors/safety.webp" alt="مستلزمات السلامة المهنية - دلتا للتوريدات العمومية" loading="lazy" width="400" height="250">
+              <img src="safety.webp" alt="مستلزمات السلامة المهنية - دلتا للتوريدات العمومية" loading="lazy" width="400" height="250">
               <div class="catalog-img-badge">توريد سريع لكافة المواقع</div>
             </div>
 
@@ -867,7 +863,7 @@
           <!-- 11 أجهزة ومستلزمات مكتبية -->
           <article class="catalog-card reveal-init" data-category-id="office-supplies-equipment" data-group="commercial-safety">
             <div class="catalog-img-wrap">
-              <img src="assets/images/sectors/stationery.webp" alt="أجهزة ومستلزمات مكتبية - دلتا للتوريدات العمومية" loading="lazy" width="400" height="250">
+              <img src="stationery.webp" alt="أجهزة ومستلزمات مكتبية - دلتا للتوريدات العمومية" loading="lazy" width="400" height="250">
               <div class="catalog-img-badge">توصيل وتركيب بالمقر الإداري</div>
             </div>
 
@@ -899,7 +895,7 @@
           <!-- 12 توريدات حكومية -->
           <article class="catalog-card reveal-init" data-category-id="government-supplies" data-group="government">
             <div class="catalog-img-wrap">
-              <img src="assets/images/sectors/tenders.webp" alt="توريدات حكومية - دلتا للتوريدات العمومية" loading="lazy" width="400" height="250">
+              <img src="tenders.webp" alt="توريدات حكومية - دلتا للتوريدات العمومية" loading="lazy" width="400" height="250">
               <div class="catalog-img-badge">التزام صارم بجدول تسليم الكراسة</div>
             </div>
 
@@ -1544,7 +1540,7 @@
         <!-- النبذة واللوجو -->
         <div class="footer-brand">
           <a href="#top" aria-label="العودة لأعلى الصفحة">
-            <img src="assets/images/logo-white.png" alt="شعار شركة دلتا للتوريدات العمومية" class="footer-logo-img" width="160" height="70">
+            <img src="logo-white.png" alt="شعار شركة دلتا للتوريدات العمومية" class="footer-logo-img" width="160" height="70">
           </a>
           <p class="footer-bio">
             شركة دلتا للتوريدات العمومية، الشريك اللوجستي والصناعي المتكامل في محافظة كفر الشيخ، بلطيم، وكافة محافظات مصر. توريد مستلزمات المصانع، الشركات، المقاولات، والمعدات بأعلى معايير الجودة وأقل سعر معتمد.
@@ -1639,6 +1635,6 @@
   </aside>
 
   <!-- الكود البرمجي الموحد والخفيف المتوافق مع فتح الملف المباشر وخوادم الويب -->
-  <script defer src="assets/js/main.js"></script>
+  <script defer src="main.js"></script>
 </body>
 </html>
