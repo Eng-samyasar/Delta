@@ -1,0 +1,29 @@
+/*
+  # فرض تشفير HTTPS الصارم عبر HSTS
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+
+  # سياسة أمان المحتوى الصارمة CSP
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; frame-src https://www.google.com https://maps.google.com; frame-ancestors 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; connect-src 'self';
+
+  # منع تخمين نوع الوسائط (MIME sniffing)
+  X-Content-Type-Options: nosniff
+
+  # منع تضمين الموقع داخل Iframe لحمايته من Clickjacking
+  X-Frame-Options: DENY
+
+  # حماية مرجعية الروابط
+  Referrer-Policy: strict-origin-when-cross-origin
+
+  # إغلاق الوصول غير الضروري للحساسات والكاميرا والميكروفون
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()
+
+  # عزل السياق عبر النطاقات
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
+
+  # حماية XSS للمتصفحات القديمة
+  X-XSS-Protection: 1; mode=block
+
+# التخزين المؤقت للأصول الثابتة
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable

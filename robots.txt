@@ -1,0 +1,6 @@
+# robots.txt for Delta General Supplies
+User-agent: *
+Allow: /
+Disallow: /assets/data/
+
+Sitemap: https://deltasupplies-eg.com/sitemap.xml

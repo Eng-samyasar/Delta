@@ -1,0 +1,31 @@
+{
+  "name": "شركة دلتا للتوريدات العمومية",
+  "short_name": "دلتا للتوريدات",
+  "description": "توريد مستلزمات المصانع، الشركات، الورش، المعدات الثقيلة، ومواد البناء بكفر الشيخ ومحافظات الدلتا ومصر.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1F2F3C",
+  "theme_color": "#1F2F3C",
+  "orientation": "portrait-primary",
+  "dir": "rtl",
+  "lang": "ar-EG",
+  "icons": [
+    {
+      "src": "assets/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/images/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
