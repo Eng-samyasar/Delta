@@ -1,0 +1,870 @@
+/**
+ * components.css
+ * مكونات الواجهة لشركة دلتا للتوريدات العمومية
+ * جميع الأيقونات SVG بدون أي إيموجي على الإطلاق
+ */
+
+/* ==========================================================================
+   الأزرار (Buttons)
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: 0.75rem 1.5rem;
+  min-height: 48px;
+  font-family: var(--font-arabic);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--transition-normal);
+  white-space: nowrap;
+  user-select: none;
+}
+
+.btn svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  stroke-width: 2;
+}
+
+/* الزر الأساسي (أصفر ذهبي من اللوجو) */
+.btn-primary {
+  background-color: var(--color-amber-500);
+  color: var(--color-navy-950);
+  border-color: var(--color-amber-500);
+  box-shadow: 0 2px 8px rgba(240, 194, 46, 0.25);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-amber-400);
+  border-color: var(--color-amber-400);
+  box-shadow: 0 4px 14px rgba(240, 194, 46, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* زر الإطار (Outline) */
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-navy-900);
+  border-color: var(--color-navy-700);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-navy-800);
+  color: var(--color-surface-card);
+  border-color: var(--color-navy-800);
+}
+
+/* زر الإطار الفاتح للأقسام الداكنة */
+.btn-outline-light {
+  background-color: transparent;
+  color: var(--color-surface-card);
+  border-color: var(--color-border-dark);
+}
+
+.btn-outline-light:hover {
+  background-color: var(--color-surface-card);
+  color: var(--color-navy-950);
+  border-color: var(--color-surface-card);
+}
+
+/* زر الكحلي الصناعي */
+.btn-dark {
+  background-color: var(--color-navy-800);
+  color: var(--color-surface-card);
+  border-color: var(--color-navy-800);
+}
+
+.btn-dark:hover {
+  background-color: var(--color-navy-900);
+  border-color: var(--color-navy-900);
+  transform: translateY(-1px);
+}
+
+/* زر الواتساب الرسمي (SVG Icon) */
+.btn-whatsapp {
+  background-color: var(--color-whatsapp);
+  color: #FFFFFF;
+  border-color: var(--color-whatsapp);
+}
+
+.btn-whatsapp:hover {
+  background-color: var(--color-whatsapp-hover);
+  border-color: var(--color-whatsapp-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+/* أحجام الأزرار */
+.btn-lg {
+  padding: 0.95rem 2rem;
+  font-size: var(--text-base);
+  min-height: 54px;
+}
+
+.btn-sm {
+  padding: 0.45rem 0.9rem;
+  font-size: var(--text-xs);
+  min-height: 38px;
+}
+
+.btn-icon-only {
+  padding: 0.5rem;
+  min-height: 40px;
+  width: 40px;
+  border-radius: var(--radius-sm);
+}
+
+/* ==========================================================================
+   الشارات والزخارف (Badges & Delta Motifs)
+   ========================================================================== */
+/* شارة شريط اللوجو المائل (Delta Angled Ribbon) */
+.badge-delta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background-color: var(--color-amber-500);
+  color: var(--color-navy-950);
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-bold);
+  padding: 0.35rem 1rem 0.35rem 1.25rem;
+  border-radius: var(--radius-xs);
+  clip-path: polygon(10px 0, 100% 0, 100% 100%, 0 100%);
+  letter-spacing: 0.02em;
+}
+
+.badge-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  border: 1px solid var(--color-border-subtle);
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--color-navy-800);
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-medium);
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--radius-pill);
+}
+
+.badge-dark-outline {
+  border-color: var(--color-border-dark);
+  background: rgba(20, 31, 40, 0.6);
+  color: var(--color-amber-400);
+}
+
+/* أيقونة مثلث دلتا الموجه (Delta Triangle Bullet) */
+.delta-triangle {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-inline-start: 5px solid transparent;
+  border-inline-end: 5px solid transparent;
+  border-block-end: 9px solid var(--color-amber-500);
+  vertical-align: middle;
+}
+
+/* ترقيم الأقسام الفني الصناعي (01, 02 ...) */
+.section-code {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-amber-600);
+  letter-spacing: 0.1em;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-block-end: var(--space-2);
+  text-transform: uppercase;
+}
+
+.section-code::before {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 2px;
+  background-color: var(--color-amber-500);
+}
+
+/* ==========================================================================
+   البطاقات والحاويات (Cards)
+   ========================================================================== */
+.card {
+  background-color: var(--color-surface-card);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-navy-300);
+}
+
+.card-dark {
+  background-color: var(--color-surface-card-dark);
+  border-color: var(--color-border-dark);
+  color: var(--color-text-inverse);
+}
+
+.card-dark:hover {
+  border-color: var(--color-amber-500);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* ==========================================================================
+   حقول ونماذج الإدخال (Form Controls)
+   ========================================================================== */
+.form-group {
+  margin-block-end: var(--space-4);
+  position: relative;
+}
+
+.form-label {
+  display: block;
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-navy-950);
+  margin-block-end: var(--space-2);
+}
+
+.form-label span.required {
+  color: var(--color-error);
+  margin-inline-start: var(--space-1);
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font-size: var(--text-base);
+  color: var(--color-navy-950);
+  background-color: var(--color-surface-card);
+  border: 1.5px solid var(--color-border-subtle);
+  border-radius: var(--radius-sm);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--color-navy-800);
+  box-shadow: 0 0 0 3px rgba(31, 47, 60, 0.15);
+}
+
+.form-control::placeholder {
+  color: var(--color-text-subtle);
+}
+
+textarea.form-control {
+  min-height: 120px;
+  resize: vertical;
+}
+
+select.form-control {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%231F2F3C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: left 1rem center;
+  padding-inline-end: 2.5rem;
+}
+
+/* حقل الـ Honeypot المخفي لحماية الفورم من البوتات */
+.form-hp-field {
+  opacity: 0 !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+  z-index: -1 !important;
+  pointer-events: none !important;
+}
+
+/* رسائل الأخطاء والتأكيد */
+.form-feedback {
+  font-size: var(--text-xs);
+  margin-block-start: var(--space-1);
+  display: none;
+}
+
+.form-control.is-invalid {
+  border-color: var(--color-error);
+}
+
+.form-control.is-invalid + .form-feedback {
+  display: block;
+  color: var(--color-error);
+}
+
+.form-alert {
+  padding: var(--space-4);
+  border-radius: var(--radius-sm);
+  margin-block-end: var(--space-4);
+  font-size: var(--text-sm);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+}
+
+.form-alert-success {
+  background-color: var(--color-success-bg);
+  border: 1px solid var(--color-success);
+  color: var(--color-success);
+}
+
+.form-alert-error {
+  background-color: var(--color-error-bg);
+  border: 1px solid var(--color-error);
+  color: var(--color-error);
+}
+
+/* ==========================================================================
+   جدول وبطاقات أرقام الهواتف (2 numbers side by side in row)
+   ========================================================================== */
+.dept-card {
+  background: var(--color-surface-card);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.dept-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding-block-end: var(--space-3);
+  border-block-end: 1px solid var(--color-border-subtle);
+}
+
+.dept-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-navy-50);
+  color: var(--color-navy-800);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.dept-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.dept-title {
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-navy-950);
+  margin-block-end: 0;
+}
+
+.dept-desc {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin-block-end: 0;
+}
+
+/* الصف الإجباري للرقمين جنباً إلى جنب في كافة المقاسات */
+.dept-numbers-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2);
+}
+
+@media (max-width: 480px) {
+  .dept-numbers-row {
+    gap: var(--space-1);
+  }
+}
+
+.phone-action-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-surface-bg);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 0.6rem;
+  transition: all var(--transition-fast);
+}
+
+.phone-action-item:hover {
+  background-color: #FFFFFF;
+  border-color: var(--color-navy-800);
+}
+
+.phone-tel-link {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-navy-900);
+  direction: ltr;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.phone-tel-link svg {
+  width: 14px;
+  height: 14px;
+  color: var(--color-navy-700);
+}
+
+.phone-wa-btn {
+  color: var(--color-whatsapp);
+  padding: 3px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-xs);
+  transition: transform var(--transition-fast);
+}
+
+.phone-wa-btn:hover {
+  transform: scale(1.15);
+}
+
+.phone-wa-btn svg {
+  width: 17px;
+  height: 17px;
+  fill: currentColor;
+}
+
+/* ==========================================================================
+   خريطة بنظام Click-to-load
+   ========================================================================== */
+.map-container {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  background-color: var(--color-navy-900);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border-subtle);
+}
+
+.map-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6);
+  text-align: center;
+  background: radial-gradient(circle at center, rgba(31, 47, 60, 0.85), rgba(16, 27, 36, 0.98));
+  color: #FFFFFF;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.map-placeholder svg {
+  width: 48px;
+  height: 48px;
+  color: var(--color-amber-500);
+  margin-block-end: var(--space-3);
+}
+
+.map-placeholder h4 {
+  color: #FFFFFF;
+  font-size: var(--text-lg);
+  margin-block-end: var(--space-2);
+}
+
+.map-placeholder p {
+  color: var(--color-text-inverse-muted);
+  font-size: var(--text-sm);
+  max-width: 400px;
+  margin-block-end: var(--space-4);
+}
+
+.map-iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ==========================================================================
+   قائمة الأسئلة الشائعة (FAQ Accordion)
+   ========================================================================== */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-width: 860px;
+  margin-inline: auto;
+}
+
+.faq-item {
+  background-color: var(--color-surface-card);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: border-color var(--transition-fast);
+}
+
+.faq-item.is-open {
+  border-color: var(--color-navy-800);
+  box-shadow: var(--shadow-sm);
+}
+
+.faq-trigger {
+  width: 100%;
+  padding: var(--space-5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  text-align: right;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--text-base);
+  color: var(--color-navy-950);
+}
+
+.faq-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-surface-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform var(--transition-normal), background-color var(--transition-fast);
+}
+
+.faq-item.is-open .faq-icon {
+  transform: rotate(180deg);
+  background-color: var(--color-amber-500);
+}
+
+.faq-content {
+  padding-inline: var(--space-5);
+  padding-block-end: var(--space-5);
+  padding-block-start: 0;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  line-height: var(--line-height-normal);
+  display: none;
+}
+
+.faq-item.is-open .faq-content {
+  display: block;
+}
+
+/* ==========================================================================
+   شريط الاتصال الثابت للموبايل (Mobile Sticky Bar)
+   ========================================================================== */
+.mobile-sticky-bar {
+  display: none;
+  position: fixed;
+  inset-inline: 0;
+  bottom: 0;
+  background-color: rgba(16, 27, 36, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 0.65rem var(--space-4);
+  padding-bottom: calc(0.65rem + env(safe-area-inset-bottom, 0px));
+  z-index: var(--z-floating);
+  border-block-start: 1px solid var(--color-border-dark);
+}
+
+.mobile-sticky-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+  max-width: 500px;
+  margin-inline: auto;
+}
+
+@media (max-width: 768px) {
+  .mobile-sticky-bar {
+    display: block;
+  }
+  
+  body {
+    padding-bottom: 74px; /* مسافة أمان لمنع حجب الفوتر */
+  }
+}
+
+/* ==========================================================================
+   صور وبطاقات المجالات الغنية (Rich Sector Images & Modals)
+   ========================================================================== */
+.catalog-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 165px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-block-end: var(--space-3);
+  background-color: var(--color-navy-900);
+}
+
+.catalog-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+.catalog-card:hover .catalog-img-wrap img {
+  transform: scale(1.06);
+}
+
+.catalog-img-badge {
+  position: absolute;
+  bottom: 8px;
+  inset-inline-start: 8px;
+  background: rgba(16, 27, 36, 0.88);
+  backdrop-filter: blur(4px);
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  font-weight: var(--font-weight-semibold);
+  padding: 3px 8px;
+  border-radius: var(--radius-xs);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.catalog-img-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-amber-500);
+}
+
+/* أدوات التصفية والبحث في الكتالوج */
+.catalog-controls {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-block-end: var(--space-8);
+  max-width: 860px;
+  margin-inline: auto;
+}
+
+.catalog-search-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  margin-inline: auto;
+}
+
+.catalog-search-input {
+  width: 100%;
+  padding: 0.85rem 1.25rem;
+  padding-inline-start: 3rem;
+  border: 1.5px solid var(--color-border-subtle);
+  border-radius: var(--radius-pill);
+  background-color: #FFFFFF;
+  font-size: var(--text-sm);
+  color: var(--color-navy-950);
+  transition: all var(--transition-fast);
+}
+
+.catalog-search-input:focus {
+  outline: none;
+  border-color: var(--color-navy-800);
+  box-shadow: 0 0 0 3px rgba(31, 47, 60, 0.15);
+}
+
+.catalog-search-icon {
+  position: absolute;
+  inset-inline-start: 1.15rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-navy-700);
+  pointer-events: none;
+  width: 18px;
+  height: 18px;
+}
+
+.filter-tabs-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.filter-tab-btn {
+  padding: 0.45rem 1.1rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border-subtle);
+  background: var(--color-surface-card);
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-navy-800);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filter-tab-btn:hover,
+.filter-tab-btn.is-active {
+  background-color: var(--color-navy-800);
+  color: #FFFFFF;
+  border-color: var(--color-navy-800);
+}
+
+.filter-counter-badge {
+  text-align: center;
+  font-size: var(--text-xs);
+  color: var(--color-text-subtle);
+  font-family: var(--font-mono);
+}
+
+/* النافذة المنبثقة لتفاصيل ومواصفات المجال (Sector Modal) */
+.sector-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(10, 17, 23, 0.8);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: var(--z-modal);
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+}
+
+.sector-modal-overlay.is-active {
+  display: flex;
+}
+
+.sector-modal-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  max-width: 600px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  border: 1px solid var(--color-border-subtle);
+  box-shadow: var(--shadow-xl);
+  padding: var(--space-6);
+}
+
+.sector-modal-close {
+  position: absolute;
+  top: 1rem;
+  inset-inline-end: 1rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-surface-bg);
+  border: 1px solid var(--color-border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-navy-950);
+}
+
+/* ==========================================================================
+   دعم الوضع الداكن (Dark Theme Classes)
+   ========================================================================== */
+[data-theme="dark"] {
+  --color-surface-bg:    #0D161D;
+  --color-surface-card:  #141F28;
+  --color-surface-muted: #1A2834;
+  --color-text-main:    #F2F6F9;
+  --color-text-muted:   #A3B6C7;
+  --color-border-subtle: #233444;
+}
+
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4 {
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .site-header {
+  background-color: rgba(13, 22, 29, 0.95);
+  border-block-end-color: #233444;
+}
+
+[data-theme="dark"] .site-header.is-scrolled {
+  background-color: #0D161D;
+}
+
+[data-theme="dark"] .nav-link {
+  color: #C2D2E0;
+}
+
+[data-theme="dark"] .hero-section {
+  background: linear-gradient(180deg, #0D161D 0%, #141F28 100%);
+}
+
+[data-theme="dark"] .about-section,
+[data-theme="dark"] .workflow-section,
+[data-theme="dark"] .contact-section {
+  background-color: #0D161D;
+  border-block-end-color: #233444;
+}
+
+[data-theme="dark"] .feature-strip {
+  background-color: #141F28;
+  border-color: #233444;
+}
+
+[data-theme="dark"] .quote-form-card,
+[data-theme="dark"] .company-meta-box,
+[data-theme="dark"] .phone-action-item,
+[data-theme="dark"] .workflow-card,
+[data-theme="dark"] .faq-item {
+  background-color: #141F28;
+  border-color: #233444;
+}
+
+[data-theme="dark"] .form-control {
+  background-color: #1A2834;
+  color: #FFFFFF;
+  border-color: #233444;
+}
+
+[data-theme="dark"] .form-label {
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .catalog-search-input,
+[data-theme="dark"] .filter-tab-btn {
+  background-color: #141F28;
+  color: #FFFFFF;
+  border-color: #233444;
+}
+
+[data-theme="dark"] .filter-tab-btn.is-active {
+  background-color: var(--color-amber-500);
+  color: var(--color-navy-950);
+  border-color: var(--color-amber-500);
+}
+
+[data-theme="dark"] .phone-tel-link {
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .sector-modal-card {
+  background-color: #141F28;
+  color: #FFFFFF;
+  border-color: #233444;
+}
+

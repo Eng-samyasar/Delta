@@ -1,0 +1,196 @@
+/**
+ * base.css
+ * القواعد الأساسية وإعادة التعيين وتهيئة اللغة العربية RTL
+ * شركة دلتا للتوريدات العمومية
+ */
+
+/* إتاحة خطوط عربية حديثة وعالية المقروئية عبر Google Fonts مع font-display: swap */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Readex+Pro:wght@300;400;500;600;700;800&display=swap');
+
+/* إعادة التعيين الحديثة (Modern CSS Reset) */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  font-family: var(--font-arabic);
+  font-size: 16px;
+  line-height: var(--line-height-normal);
+  color: var(--color-text-main);
+  background-color: var(--color-surface-bg);
+  direction: rtl;
+  text-align: right;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  background-color: var(--color-surface-bg);
+}
+
+/* الرابط المباشر للوصول السريع للمحتوى لذوي الهمم (Accessibility Skip Link) */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  inset-inline-start: var(--space-4);
+  background: var(--color-amber-500);
+  color: var(--color-navy-950);
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-sm);
+  font-weight: var(--font-weight-bold);
+  z-index: var(--z-modal);
+  text-decoration: none;
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: var(--space-4);
+  outline: 3px solid var(--color-navy-900);
+}
+
+/* تنسيق عناصر النصوص الأساسية */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-arabic);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--color-navy-950);
+  margin-block-end: var(--space-3);
+}
+
+h1 {
+  font-size: var(--text-hero);
+  font-weight: var(--font-weight-black);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-weight-bold);
+}
+
+h3 {
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-bold);
+}
+
+p {
+  margin-block-end: var(--space-4);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-normal);
+}
+
+p:last-child {
+  margin-block-end: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+img, svg, picture {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button, input, select, textarea {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* عناصر الحاويات (Containers) */
+.container {
+  width: 100%;
+  max-width: var(--container-xl);
+  margin-inline: auto;
+  padding-inline: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-inline: var(--space-6);
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    padding-inline: var(--space-8);
+  }
+}
+
+/* حاوية أوسع للأقسام الخاصة */
+.container-wide {
+  max-width: var(--container-2xl);
+}
+
+/* تنسيق الأرقام بخط أحادي الخانة ومن اليسار لليمين */
+.tabular-nums,
+.num-ltr {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  direction: ltr;
+  display: inline-block;
+  unicode-bidi: embed;
+}
+
+/* إخفاء للعناصر الصوتية وقارئات الشاشة */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* تخصيص التحديد ولون التظليل */
+::selection {
+  background-color: var(--color-amber-500);
+  color: var(--color-navy-950);
+}
+
+/* تخصيص شريط التمرير */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-surface-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-navy-700);
+  border-radius: var(--radius-xs);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-amber-500);
+}
+
+/* التركيز المتاح للمفاتيح (Keyboard Focus Indicators) */
+:focus-visible {
+  outline: 2px solid var(--color-amber-500);
+  outline-offset: 3px;
+}

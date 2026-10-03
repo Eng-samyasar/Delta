@@ -1,0 +1,78 @@
+/**
+ * animations.css
+ * الحركات الهادئة والانتقالات الذكية لشركة دلتا
+ * مع مبدأ الأمان الإنشائي: المحتوى مرئي دائماً بشكل افتراضي
+ * ومع الاحترام الصارم لإعدادات تقليل الحركة prefers-reduced-motion
+ */
+
+/* ==========================================================================
+   المحتوى مرئي دائماً كقاعدة أساسية (Progressive Enhancement)
+   ========================================================================== */
+.reveal-init {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+/* يتم تطبيق تأثير الإخفاء والظهور بالسكرول فقط إذا اشتغل الجافاسكريبت بنجاح */
+html.js-ready .reveal-init:not(.reveal-visible) {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+html.js-ready .reveal-init.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 {
+  transition-delay: 0.1s;
+}
+
+.reveal-delay-2 {
+  transition-delay: 0.2s;
+}
+
+.reveal-delay-3 {
+  transition-delay: 0.3s;
+}
+
+.reveal-delay-4 {
+  transition-delay: 0.4s;
+}
+
+/* وميض هادئ للمثلث الذهبي */
+@keyframes subtle-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.pulse-subtle {
+  animation: subtle-pulse 3s infinite ease-in-out;
+}
+
+/* ==========================================================================
+   احترام تفضيلات المستخدم لتقليل الحركة (Accessibility First)
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal-init,
+  html.js-ready .reveal-init:not(.reveal-visible) {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

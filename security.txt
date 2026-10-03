@@ -1,0 +1,9 @@
+# Delta General Supplies Security Policy (RFC 9116)
+Contact: mailto:security@deltasupplies-eg.com
+Contact: https://deltasupplies-eg.com/#contact
+Expires: 2027-12-31T23:59:59.000Z
+Preferred-Languages: ar, en
+Canonical: https://deltasupplies-eg.com/.well-known/security.txt
+Policy: https://deltasupplies-eg.com/privacy.html
+Hiring: https://deltasupplies-eg.com/#contact
+Acknowledgments: https://deltasupplies-eg.com/

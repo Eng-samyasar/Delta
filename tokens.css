@@ -1,0 +1,156 @@
+/**
+ * tokens.css
+ * نظام المتغيرات الشامل (Design Tokens) لشركة دلتا للتوريدات العمومية
+ * مستخرج ومبني بدقة رقمية على هوية ولوجو الشركة
+ */
+
+:root {
+  /* ==========================================================================
+     الألوان الرسمية (Brand Palette)
+     ========================================================================== */
+  /* الكحلي الصناعي الأساسي (Primary Navy) */
+  --color-navy-950: #0A1117;
+  --color-navy-900: #101B24;
+  --color-navy-850: #141F28;
+  --color-navy-800: #1F2F3C; /* لون الشعار الرسمي المعتمد */
+  --color-navy-700: #2A3F50;
+  --color-navy-600: #385166;
+  --color-navy-500: #4B6880;
+  --color-navy-400: #68849E;
+  --color-navy-300: #93ABC2;
+  --color-navy-200: #C2D2E0;
+  --color-navy-100: #E4ECF2;
+  --color-navy-50:  #F2F6F9;
+
+  /* الأصفر الذهبي (Amber Gold Accent) */
+  --color-amber-600: #D3A41B;
+  --color-amber-500: #F0C22E; /* لون الشعار الرسمي المعتمد */
+  --color-amber-400: #F6D054;
+  --color-amber-300: #FAE082;
+  --color-amber-100: #FEF7DE;
+  --color-amber-50:  #FFFDF5;
+
+  /* ألوان الخلفيات والسطوح (Surfaces) */
+  --color-surface-bg:    #F6F4EF; /* أوف-وايت دافئ صناعي */
+  --color-surface-card:  #FFFFFF; /* أبيض نقي للكروت */
+  --color-surface-muted: #EDEAE1; /* رمادي دافئ خفيف للفواصل */
+  --color-surface-dark:  #141F28; /* كحلي داكن للأقسام الداكنة */
+  --color-surface-card-dark: #1A2834;
+
+  /* درجات الرمادي المعدني والحدود (Slate & Metal) */
+  --color-text-main:    #101B24;
+  --color-text-muted:   #506070;
+  --color-text-subtle:  #7E8F9F;
+  --color-text-inverse: #FFFFFF;
+  --color-text-inverse-muted: #A3B6C7;
+
+  --color-border-subtle: #E2DFD6;
+  --color-border-dark:   #233444;
+  --color-border-active: #F0C22E;
+
+  /* ألوان دلالية (Semantic States) */
+  --color-success: #1E8E5A;
+  --color-success-bg: #EAF7EE;
+  --color-error:   #D9383A;
+  --color-error-bg:   #FDEDED;
+  --color-whatsapp: #25D366;
+  --color-whatsapp-hover: #1EBE5D;
+
+  /* ==========================================================================
+     الخطوط والطباعة المرنة (Fluid Typography)
+     ========================================================================== */
+  --font-arabic: 'Readex Pro', 'Cairo', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono:   'JetBrains Mono', 'Roboto Mono', 'SF Mono', Consolas, monospace;
+
+  /* أحجام الخطوط السائلة باستخدام clamp() */
+  --text-xs:   clamp(0.75rem,  0.70rem + 0.25vw, 0.8125rem);
+  --text-sm:   clamp(0.875rem, 0.82rem + 0.28vw, 0.9375rem);
+  --text-base: clamp(1rem,     0.95rem + 0.25vw, 1.0625rem);
+  --text-md:   clamp(1.125rem, 1.05rem + 0.35vw, 1.25rem);
+  --text-lg:   clamp(1.25rem,  1.15rem + 0.50vw, 1.4375rem);
+  --text-xl:   clamp(1.5rem,   1.35rem + 0.75vw, 1.75rem);
+  --text-2xl:  clamp(1.75rem,  1.50rem + 1.20vw, 2.125rem);
+  --text-3xl:  clamp(2.125rem, 1.80rem + 1.60vw, 2.625rem);
+  --text-4xl:  clamp(2.5rem,   2.10rem + 2.00vw, 3.25rem);
+  --text-hero: clamp(2.75rem,  2.20rem + 2.80vw, 4.00rem);
+
+  /* أوزان الخطوط */
+  --font-weight-regular: 400;
+  --font-weight-medium:  500;
+  --font-weight-semibold: 600;
+  --font-weight-bold:    700;
+  --font-weight-black:   800;
+
+  /* ارتفاعات الأسطر (Line Heights) */
+  --line-height-tight:  1.2;
+  --line-height-snug:   1.35;
+  --line-height-normal: 1.65;
+  --line-height-loose:  1.85;
+
+  /* ==========================================================================
+     المسافات والأبعاد (Spacing System)
+     ========================================================================== */
+  --space-1:  0.25rem;  /* 4px */
+  --space-2:  0.5rem;   /* 8px */
+  --space-3:  0.75rem;  /* 12px */
+  --space-4:  1rem;     /* 16px */
+  --space-5:  1.25rem;  /* 20px */
+  --space-6:  1.5rem;   /* 24px */
+  --space-8:  2rem;     /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+  --space-32: 8rem;     /* 128px */
+
+  /* أقصى عرض للحاويات (Containers) */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1240px;
+  --container-2xl: 1360px;
+
+  /* ==========================================================================
+     الحواف والزوايا والأشكال الهندسية (Radius & Industrial Shapes)
+     ========================================================================== */
+  --radius-none: 0;
+  --radius-xs:   3px;
+  --radius-sm:   6px;
+  --radius-md:   10px;
+  --radius-lg:   16px;
+  --radius-xl:   24px;
+  --radius-pill: 9999px;
+
+  /* الشريط المائل للّوجو (Delta Angle Cut) */
+  --shape-delta-ribbon: polygon(0 0, calc(100% - 14px) 0, 100% 100%, 0 100%);
+  --shape-delta-ribbon-rtl: polygon(14px 0, 100% 0, 100% 100%, 0 100%);
+
+  /* ==========================================================================
+     الظلال (Industrial Precision Shadows)
+     ========================================================================== */
+  --shadow-sm:  0 1px 2px rgba(16, 27, 36, 0.05);
+  --shadow-md:  0 4px 12px rgba(16, 27, 36, 0.08);
+  --shadow-lg:  0 12px 28px rgba(16, 27, 36, 0.12);
+  --shadow-xl:  0 20px 45px rgba(16, 27, 36, 0.16);
+  --shadow-amber: 0 8px 24px rgba(240, 194, 46, 0.35);
+
+  /* ==========================================================================
+     الطبقات (Z-Index Hierarchy)
+     ========================================================================== */
+  --z-negative: -1;
+  --z-base:      1;
+  --z-elevated:  10;
+  --z-dropdown:  100;
+  --z-sticky:    500;
+  --z-header:    1000;
+  --z-floating:  1100;
+  --z-modal:     1200;
+
+  /* ==========================================================================
+     الانتقالات الحركية (Transitions)
+     ========================================================================== */
+  --transition-fast:   150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
