@@ -158,6 +158,36 @@
   --transition-smooth: 400ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* تعديل أحجام الخطوط لشاشات الموبايل والتابلت */
+@media (max-width: 767px) {
+  :root {
+    --text-xs: 0.75rem;
+    --text-sm: 0.84375rem;
+    --text-base: 0.9375rem; /* 15px - النص الأساسي لا ينزل عن 15px */
+    --text-md: 1.03125rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.225rem;
+    --text-2xl: 1.35rem;
+    --text-3xl: 1.5rem;
+    --text-4xl: 1.75rem;
+    --text-hero: 1.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --text-xs: 0.75rem;
+    --text-sm: 0.8125rem;
+    --text-base: 0.9375rem;
+    --text-md: 1.0rem;
+    --text-lg: 1.0625rem;
+    --text-xl: 1.15rem;
+    --text-2xl: 1.25rem;
+    --text-3xl: 1.35rem;
+    --text-4xl: 1.55rem;
+    --text-hero: 1.75rem;
+  }
+}
 
 /* --- base.css --- */
 /**
@@ -190,13 +220,18 @@ html {
   text-align: right;
   scroll-behavior: smooth;
   scroll-padding-top: 5.5rem;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  overflow-x: clip;
 }
 
 body {
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  overflow-x: clip;
   background-color: var(--color-surface-bg);
 }
 
@@ -276,6 +311,13 @@ button, input, select, textarea {
 
 button {
   cursor: pointer;
+}
+
+/* منع تقريب الشاشة التلقائي في أجهزة iOS عند التركيز على حقول الإدخال */
+@media (max-width: 767px) {
+  input, select, textarea, .form-control {
+    font-size: 16px !important;
+  }
 }
 
 /* عناصر الحاويات (Containers) */
@@ -485,6 +527,30 @@ button {
   min-height: 40px;
   width: 40px;
   border-radius: var(--radius-sm);
+}
+
+@media (max-width: 991px) {
+  .btn-sm {
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 767px) {
+  .btn, .btn-lg {
+    padding: 0.65rem 1.1rem;
+    min-height: 44px;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.35;
+  }
+  .btn-sm {
+    padding: 0.5rem 0.85rem;
+    min-height: 44px;
+  }
+  .btn-icon-only {
+    min-height: 44px;
+    width: 44px;
+  }
 }
 
 /* ==========================================================================
@@ -742,7 +808,7 @@ select.form-control {
   margin-block-end: 0;
 }
 
-/* الصف الإجباري للرقمين جنباً إلى جنب في كافة المقاسات */
+/* الصف الإجباري للرقمين جنباً إلى جنب في الديسكتوب والتابلت */
 .dept-numbers-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -751,7 +817,8 @@ select.form-control {
 
 @media (max-width: 480px) {
   .dept-numbers-row {
-    gap: var(--space-1);
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
   }
 }
 
@@ -800,6 +867,28 @@ select.form-control {
 
 .phone-wa-btn:hover {
   transform: scale(1.15);
+}
+
+@media (max-width: 767px) {
+  .phone-action-item {
+    min-height: 44px;
+    min-width: 0;
+    padding: 0.5rem 0.65rem;
+  }
+  .phone-tel-link {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    min-width: 0;
+  }
+  .phone-wa-btn {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .phone-wa-btn svg {
@@ -936,23 +1025,51 @@ select.form-control {
 .mobile-sticky-bar {
   display: none;
   position: fixed;
-  inset-inline: 0;
+  left: 0;
+  right: 0;
   bottom: 0;
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
   background-color: rgba(16, 27, 36, 0.95);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  padding: 0.65rem var(--space-4);
-  padding-bottom: calc(0.65rem + env(safe-area-inset-bottom, 0px));
+  padding: 0.5rem 0.75rem;
+  padding-bottom: calc(0.5rem + env(safe-area-inset-bottom, 0px));
   z-index: var(--z-floating);
   border-block-start: 1px solid var(--color-border-dark);
 }
 
 .mobile-sticky-inner {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-3);
-  max-width: 500px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 480px;
   margin-inline: auto;
+  box-sizing: border-box;
+}
+
+.mobile-sticky-inner .btn {
+  min-width: 0;
+  width: 100%;
+  padding: 0.45rem 0.5rem;
+  font-size: 0.8125rem;
+  gap: 0.35rem;
+  min-height: 44px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+}
+
+.mobile-sticky-inner .btn svg {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
 }
 
 @media (max-width: 768px) {
@@ -961,7 +1078,7 @@ select.form-control {
   }
   
   body {
-    padding-bottom: 74px; /* مسافة أمان لمنع حجب الفوتر */
+    padding-bottom: calc(62px + env(safe-area-inset-bottom, 0px));
   }
 }
 
@@ -976,6 +1093,12 @@ select.form-control {
   overflow: hidden;
   margin-block-end: var(--space-3);
   background-color: var(--color-navy-900);
+}
+
+@media (max-width: 767px) {
+  .catalog-img-wrap {
+    height: 135px;
+  }
 }
 
 .catalog-img-wrap img {
@@ -1083,6 +1206,41 @@ select.form-control {
   background-color: var(--color-navy-800);
   color: #FFFFFF;
   border-color: var(--color-navy-800);
+}
+
+@media (max-width: 991px) {
+  .filter-tab-btn {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .filter-tabs-wrap {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start;
+    padding-block: 0.35rem;
+    padding-inline: 0.25rem;
+    gap: 0.5rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .filter-tabs-wrap::-webkit-scrollbar {
+    display: none;
+  }
+  .filter-tab-btn {
+    flex-shrink: 0;
+    min-height: 44px;
+    padding: 0.5rem 1rem;
+  }
 }
 
 .filter-counter-badge {
@@ -1898,6 +2056,14 @@ select.form-control {
   transform: scale(1.15);
 }
 
+@media (max-width: 991px) {
+  .catalog-action-btn,
+  .btn-sector-modal {
+    min-height: 44px;
+    padding-block: 0.65rem;
+  }
+}
+
 /* ==========================================================================
    قسم كيف نعمل (How We Work — 4 Steps)
    ========================================================================== */
@@ -2308,6 +2474,16 @@ select.form-control {
   box-shadow: var(--shadow-md);
 }
 
+@media (max-width: 767px) {
+  .contact-map-btn {
+    width: 100%;
+    justify-content: center;
+    white-space: normal;
+    text-align: center;
+    min-height: 44px;
+  }
+}
+
 .contact-map-card .map-container {
   height: 420px;
   border: none;
@@ -2500,6 +2676,144 @@ select.form-control {
 .footer-bottom-links {
   display: flex;
   gap: var(--space-4);
+}
+
+/* ==========================================================================
+   التحسينات الشاملة للتجاوب مع الموبايل والتابلت (Mobile & Tablet Responsiveness)
+   ========================================================================== */
+@media (max-width: 767px) {
+  /* ترويسة الصفحة وقائمة التنقل */
+  .site-header {
+    border-block-end-color: var(--color-border-subtle);
+  }
+  .header-inner {
+    height: 60px;
+    min-height: 60px;
+  }
+  .brand-logo-img {
+    height: 38px;
+    max-height: 38px;
+    width: auto;
+  }
+  .menu-toggle {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  /* تقليص المسافات الرأسية للأقسام لتقليل طول الصفحة وتحسين التوازن */
+  .hero-section {
+    padding-block-start: 2rem;
+    padding-block-end: 2.25rem;
+  }
+  .about-section,
+  .catalog-section,
+  .workflow-section,
+  .why-section,
+  .sectors-section,
+  .contact-section,
+  .faq-section {
+    padding-block: 2.25rem;
+  }
+  .cta-band {
+    padding-block: 2rem;
+  }
+  .site-footer {
+    padding-block-start: 2.5rem;
+    padding-block-end: 1.5rem;
+  }
+  .section-header {
+    margin-block-end: var(--space-6);
+  }
+  .footer-grid {
+    margin-block-end: var(--space-6);
+  }
+
+  /* تقليص الفجوات بين الأعمدة والكروت */
+  .hero-grid,
+  .about-grid,
+  .catalog-grid,
+  .workflow-grid,
+  .why-grid,
+  .sectors-grid,
+  .contact-layout,
+  .footer-grid {
+    gap: 1.125rem;
+  }
+
+  /* تقليص الهوامش الداخلية للكروت */
+  .catalog-card,
+  .workflow-card,
+  .why-card,
+  .dept-card,
+  .quote-form-card,
+  .company-meta-box,
+  .coverage-card,
+  .hero-graphic-card {
+    padding: 1rem;
+  }
+  .catalog-card {
+    min-height: auto;
+  }
+
+  /* ضبط ارتفاع الخرائط لتناسب شاشات الهواتف دون استهلاك مساحة مفرطة */
+  .map-container,
+  .contact-map-card .map-container {
+    height: 250px;
+  }
+
+  /* منع تمدد عناصر الـ Flex والـ Grid خارج الشاشة وضمان بقائها داخل الحاوية */
+  .hero-content,
+  .hero-visual,
+  .hero-graphic-card,
+  .about-point-item,
+  .catalog-card,
+  .workflow-card,
+  .why-card,
+  .sector-card,
+  .dept-card,
+  .dept-header,
+  .dept-numbers-row,
+  .phone-action-item,
+  .quote-form-card,
+  .company-meta-box,
+  .meta-item,
+  .contact-map-card,
+  .footer-column,
+  .footer-brand {
+    min-width: 0;
+  }
+
+  /* التواء النصوص الطويلة والبريد الإلكتروني لمنع أي فيضان أفقي */
+  a, p, span, h1, h2, h3, h4, h5, h6, .meta-item .value, .phone-tel-link {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+}
+
+@media (max-width: 480px) {
+  /* عرض أزرار الهيرو بشكل كامل ومتناسق تحت بعض */
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch;
+    gap: 0.65rem;
+  }
+  .hero-cta-group .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* كروت القطاعات على الشاشات شديدة الضيق */
+  .sectors-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+  .sector-card {
+    padding: 0.65rem 0.5rem;
+    gap: 0.5rem;
+  }
 }
 
 
