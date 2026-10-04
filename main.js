@@ -309,13 +309,34 @@
     // فرض الوضع النهاري القياسي
     document.documentElement.setAttribute('data-theme', 'light');
 
+    const backToTopBtn = document.getElementById('back-to-top');
+
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 20) {
+      const scrollPos = window.scrollY || document.documentElement.scrollTop;
+      if (scrollPos > 20) {
         header?.classList.add('is-scrolled');
       } else {
         header?.classList.remove('is-scrolled');
       }
+
+      if (backToTopBtn) {
+        if (scrollPos > 320) {
+          backToTopBtn.classList.add('is-visible');
+        } else {
+          backToTopBtn.classList.remove('is-visible');
+        }
+      }
     }, { passive: true });
+
+    if (backToTopBtn) {
+      backToTopBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
 
     if (menuToggle && mobileDrawer) {
       menuToggle.addEventListener('click', () => {

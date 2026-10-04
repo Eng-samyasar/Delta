@@ -554,6 +554,70 @@ button {
 }
 
 /* ==========================================================================
+   زر الصعود لأعلى الصفحة (Scroll To Top Floating Button)
+   ========================================================================== */
+.back-to-top-btn {
+  position: fixed;
+  inset-inline-end: 1.5rem;
+  bottom: 2rem;
+  width: 46px;
+  height: 46px;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 50%;
+  background-color: var(--color-navy-850);
+  color: var(--color-amber-500);
+  border: 1.5px solid rgba(240, 194, 46, 0.4);
+  box-shadow: 0 4px 16px rgba(10, 17, 23, 0.28);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: var(--z-floating);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px) scale(0.92);
+  transition: opacity var(--transition-normal), visibility var(--transition-normal), transform var(--transition-normal), background-color var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.back-to-top-btn.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.back-to-top-btn:hover {
+  background-color: var(--color-amber-500);
+  color: var(--color-navy-950);
+  border-color: var(--color-amber-500);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 24px rgba(240, 194, 46, 0.35);
+}
+
+.back-to-top-btn:active {
+  transform: translateY(0) scale(0.96);
+}
+
+.back-to-top-btn svg {
+  width: 22px;
+  height: 22px;
+  transition: transform var(--transition-fast);
+}
+
+.back-to-top-btn:hover svg {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .back-to-top-btn {
+    inset-inline-end: 1rem;
+    bottom: calc(68px + env(safe-area-inset-bottom, 0px));
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* ==========================================================================
    الشارات والزخارف (Badges & Delta Motifs)
    ========================================================================== */
 /* شارة شريط اللوجو المائل (Delta Angled Ribbon) */
