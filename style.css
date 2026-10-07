@@ -1418,6 +1418,19 @@ select.form-control {
   border-color: #233444;
 }
 
+[data-theme="dark"] .meta-item svg {
+  color: var(--color-amber-400);
+}
+
+[data-theme="dark"] .meta-item .value,
+[data-theme="dark"] .meta-item a.value {
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .meta-item a.value:hover {
+  color: var(--color-amber-400);
+}
+
 [data-theme="dark"] .form-control {
   background-color: #1A2834;
   color: #FFFFFF;
@@ -2354,37 +2367,41 @@ select.form-control {
   background-color: var(--color-surface-bg);
   border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-md);
-  padding: var(--space-5);
+  padding: var(--space-4) var(--space-5);
   margin-block-start: var(--space-4);
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   gap: var(--space-3);
-}
-
-@media (min-width: 640px) {
-  .company-meta-box {
-    grid-template-columns: 1fr 1fr;
-  }
 }
 
 .meta-item {
   display: flex;
   align-items: flex-start;
   gap: var(--space-3);
+  min-width: 0;
+  width: 100%;
 }
 
 .meta-item svg {
   width: 20px;
   height: 20px;
-  color: var(--color-navy-800);
+  color: var(--color-amber-500);
   flex-shrink: 0;
   margin-block-start: 2px;
+}
+
+.meta-item > div {
+  min-width: 0;
+  flex: 1;
 }
 
 .meta-item .label {
   font-size: var(--text-xs);
   color: var(--color-text-subtle);
   display: block;
+  margin-block-end: 2px;
+  word-break: normal;
+  overflow-wrap: break-word;
 }
 
 .meta-item .value {
@@ -2392,6 +2409,34 @@ select.form-control {
   font-weight: var(--font-weight-semibold);
   color: var(--color-navy-950);
   display: block;
+  line-height: 1.5;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+.meta-item a.value {
+  color: var(--color-navy-950);
+  text-decoration: none;
+  display: inline-block;
+  transition: color var(--transition-fast);
+}
+
+.meta-item a.value:hover {
+  color: var(--color-amber-500);
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .company-meta-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4) var(--space-6);
+    padding: var(--space-5);
+  }
+
+  .company-meta-box .meta-item-full {
+    grid-column: span 2;
+  }
 }
 
 /* كارت الفورم */
@@ -2849,10 +2894,22 @@ select.form-control {
     min-width: 0;
   }
 
-  /* التواء النصوص الطويلة والبريد الإلكتروني لمنع أي فيضان أفقي */
-  a, p, span, h1, h2, h3, h4, h5, h6, .meta-item .value, .phone-tel-link {
+  /* التواء النصوص مع حماية الكلمات العربية من التفكك */
+  a, p, span, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+
+  .meta-item .label,
+  .meta-item .value {
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+
+  .num-ltr,
+  .phone-tel-link,
+  .phone-wa-btn {
     overflow-wrap: anywhere;
-    word-break: break-word;
+    word-break: break-all;
   }
 }
 
