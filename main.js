@@ -26,7 +26,12 @@
         workingHours: 'السبت — الخميس: 9:00 ص — 5:00 م (الجمعة عطلة)',
         mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d54832.06733276856!2d30.9069!3d31.1107!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14f7ac9c6a1d48ab%3A0x6b90757a315e985b!2z2YPYgdixINin2YTYtNmK2K7YjCDZhdit2KfZgdi42Kkg2YPZgdixINin2YTYtNmK2K7YjCDZhdWy2LE!5e0!3m2!1sar!2seg!4v1710000000000!5m2!1sar!2seg'
       },
-      email: 'info@deltasupplies-eg.com'
+      email: 'delta.supplies.co.1@gmail.com',
+      socialMedia: {
+        tiktok: 'https://www.tiktok.com/@delta_forsupplies?_r=1&_t=ZS-9AUl8apGSrV',
+        instagram: 'https://instagram.com/delta_supplies4649?srtk=MTdkczg5Y3MzZDkyeg%3D%3D',
+        facebook: 'https://www.facebook.com/share/1C1cn6nN6z/'
+      }
     },
 
     // أقسام الاتصال الأربعة
@@ -37,8 +42,7 @@
         description: 'استفسارات عامة ومتابعة التوريدات الفورية',
         icon: 'headphones',
         numbers: [
-          { raw: '01012345601', display: '010 1234 5601', label: 'خدمة العملاء - الخط الأول' },
-          { raw: '01112345602', display: '011 1234 5602', label: 'خدمة العملاء - الخط الثاني' }
+          { raw: '01022470374', display: '010 2247 0374', label: 'خدمة العملاء' }
         ]
       },
       {
@@ -47,7 +51,7 @@
         description: 'الاتفاقيات والعقود وبناء الشراكات المؤسسية',
         icon: 'megaphone',
         numbers: [
-          { raw: '01012345603', display: '010 1234 5603', label: 'التسويق والشراكات' }
+          { raw: '01069645986', display: '010 6964 5986', label: 'التسويق والشراكات' }
         ]
       },
       {
@@ -56,7 +60,7 @@
         description: 'طلبات عروض الأسعار ومقايسات التوريد المباشر',
         icon: 'tag',
         numbers: [
-          { raw: '01012345605', display: '010 1234 5605', label: 'المبيعات وعروض الأسعار' }
+          { raw: '01091821698', display: '010 9182 1698', label: 'المبيعات وعروض الأسعار' }
         ]
       },
       {
@@ -65,8 +69,8 @@
         description: 'العقود الكبرى والمناقصات الحكومية',
         icon: 'briefcase',
         numbers: [
-          { raw: '01012345607', display: '010 1234 5607', label: 'الإدارة - الخط الأول' },
-          { raw: '01112345608', display: '011 1234 5608', label: 'الإدارة - الخط الثاني' }
+          { raw: '01069645986', display: '010 6964 5986', label: 'الإدارة - الخط الأول' },
+          { raw: '01022892591', display: '010 2289 2591', label: 'الإدارة - الخط الثاني' }
         ]
       }
     ],
@@ -270,12 +274,13 @@
         </div>
       `;
 
+      const isSingle = dept.numbers.length === 1 ? ' style="grid-column: 1 / -1; width: 100%;"' : '';
       const numbersHtml = dept.numbers.map((num) => {
         const telUrl = getPhoneLink(num.raw);
         const waUrl = getWhatsAppLink(num.raw, `مرحباً، أود التواصل مع قسم ${dept.name} بشركة دلتا.`);
         
         return `
-          <div class="phone-action-item">
+          <div class="phone-action-item"${isSingle}>
             <a href="${telUrl}" class="phone-tel-link" aria-label="اتصل هاتفياً بـ ${num.label} على الرقم ${num.raw}">
               ${SVG_ICONS.phone}
               <span class="num-ltr">${num.display}</span>
@@ -647,7 +652,7 @@
       }
 
       const waMsg = buildQuoteWhatsAppMessage(formCheck.data);
-      const salesNumber = siteConfig.departments.find(d => d.id === 'sales')?.numbers[0]?.raw || '01012345605';
+      const salesNumber = siteConfig.departments.find(d => d.id === 'sales')?.numbers[0]?.raw || '01091821698';
       const waUrl = getWhatsAppLink(salesNumber, waMsg);
 
       showAlert(`شكراً لك يا ${formCheck.data.name}. جاري فتح تطبيق واتساب لإرسال تفاصيل طلبك مباشرة إلى مبيعات شركة دلتا...`, 'success');

@@ -163,7 +163,7 @@ export function initQuoteForm() {
       });
 
       // رقم مبيعات الشركة المعتمد
-      const salesNumber = siteConfig.departments.find(d => d.id === 'sales')?.numbers[0]?.raw || '01012345605';
+      const salesNumber = siteConfig.departments.find(d => d.id === 'sales')?.numbers[0]?.raw || '01091821698';
       const waUrl = getWhatsAppLink(salesNumber, waMsg);
 
       window.open(waUrl, '_blank', 'noopener,noreferrer');

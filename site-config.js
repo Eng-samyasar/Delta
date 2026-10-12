@@ -41,7 +41,12 @@ export const siteConfig = {
       hours: '9:00 صباحاً — 5:00 مساءً',
       weekend: 'الجمعة عطلة أسبوعية'
     },
-    email: 'info@deltasupplies-eg.com'
+    email: 'delta.supplies.co.1@gmail.com',
+    socialMedia: {
+      tiktok: 'https://www.tiktok.com/@delta_forsupplies?_r=1&_t=ZS-9AUl8apGSrV',
+      instagram: 'https://instagram.com/delta_supplies4649?srtk=MTdkczg5Y3MzZDkyeg%3D%3D',
+      facebook: 'https://www.facebook.com/share/1C1cn6nN6z/'
+    }
   },
 
   // أقسام الاتصال الأربعة
@@ -53,16 +58,10 @@ export const siteConfig = {
       icon: 'headphones',
       numbers: [
         {
-          raw: '01012345601',
-          international: '+201012345601',
-          display: '010 1234 5601',
-          label: 'خدمة العملاء - الخط الأول'
-        },
-        {
-          raw: '01112345602',
-          international: '+201112345602',
-          display: '011 1234 5602',
-          label: 'خدمة العملاء - الخط الثاني'
+          raw: '01022470374',
+          international: '+201022470374',
+          display: '010 2247 0374',
+          label: 'خدمة العملاء'
         }
       ]
     },
@@ -73,9 +72,9 @@ export const siteConfig = {
       icon: 'megaphone',
       numbers: [
         {
-          raw: '01012345603',
-          international: '+201012345603',
-          display: '010 1234 5603',
+          raw: '01069645986',
+          international: '+201069645986',
+          display: '010 6964 5986',
           label: 'التسويق والشراكات'
         }
       ]
@@ -87,9 +86,9 @@ export const siteConfig = {
       icon: 'tag',
       numbers: [
         {
-          raw: '01012345605',
-          international: '+201012345605',
-          display: '010 1234 5605',
+          raw: '01091821698',
+          international: '+201091821698',
+          display: '010 9182 1698',
           label: 'المبيعات وعروض الأسعار'
         }
       ]
@@ -101,15 +100,15 @@ export const siteConfig = {
       icon: 'briefcase',
       numbers: [
         {
-          raw: '01012345607',
-          international: '+201012345607',
-          display: '010 1234 5607',
+          raw: '01069645986',
+          international: '+201069645986',
+          display: '010 6964 5986',
           label: 'الإدارة - الخط الأول'
         },
         {
-          raw: '01112345608',
-          international: '+201112345608',
-          display: '011 1234 5608',
+          raw: '01022892591',
+          international: '+201022892591',
+          display: '010 2289 2591',
           label: 'الإدارة - الخط الثاني'
         }
       ]
