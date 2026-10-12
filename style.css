@@ -920,17 +920,58 @@ select.form-control {
 }
 
 .phone-wa-btn {
-  color: var(--color-whatsapp);
-  padding: 3px;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  border-radius: var(--radius-xs);
-  transition: transform var(--transition-fast);
+  gap: 6px;
+  background-color: var(--color-whatsapp, #25D366);
+  color: #FFFFFF !important;
+  font-family: var(--font-arabic);
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(37, 211, 102, 0.28);
+  transition: transform var(--transition-fast), background-color var(--transition-fast), box-shadow var(--transition-fast);
+  cursor: pointer;
+  flex-shrink: 0;
 }
 
 .phone-wa-btn:hover {
-  transform: scale(1.15);
+  background-color: var(--color-whatsapp-hover, #1EBE5D);
+  color: #FFFFFF !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.45);
+}
+
+.phone-wa-btn:active {
+  transform: translateY(0);
+}
+
+.phone-wa-btn svg {
+  width: 15px;
+  height: 15px;
+  fill: #FFFFFF !important;
+  flex-shrink: 0;
+}
+
+.phone-wa-btn .wa-text-full {
+  display: inline;
+}
+
+.phone-wa-btn .wa-text-compact {
+  display: none;
+}
+
+/* في الصفوف التي تحتوي على رقمين كالإدارة العامة */
+.dept-numbers-row:has(.phone-action-item:nth-child(2)) .phone-wa-btn .wa-text-full {
+  display: none;
+}
+
+.dept-numbers-row:has(.phone-action-item:nth-child(2)) .phone-wa-btn .wa-text-compact {
+  display: inline;
 }
 
 @media (max-width: 767px) {
@@ -946,19 +987,19 @@ select.form-control {
     min-width: 0;
   }
   .phone-wa-btn {
-    min-width: 44px;
-    min-height: 44px;
-    padding: 0.5rem;
+    min-height: 38px;
+    padding: 6px 10px;
+    gap: 4px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
   }
-}
-
-.phone-wa-btn svg {
-  width: 17px;
-  height: 17px;
-  fill: currentColor;
+  .phone-wa-btn .wa-text-full {
+    display: none;
+  }
+  .phone-wa-btn .wa-text-compact {
+    display: inline;
+  }
 }
 
 /* ==========================================================================
@@ -2720,11 +2761,11 @@ select.form-control {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-full);
+  width: 42px;
+  height: 42px;
+  border-radius: 50% !important;
   background-color: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   color: #FFFFFF;
   text-decoration: none;
   transition: transform var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
@@ -2734,6 +2775,7 @@ select.form-control {
   width: 20px;
   height: 20px;
   fill: currentColor;
+  display: block;
   transition: transform var(--transition-fast);
 }
 
@@ -2742,7 +2784,7 @@ select.form-control {
 }
 
 .social-icon-link:hover svg {
-  transform: scale(1.1);
+  transform: scale(1.12);
 }
 
 /* زر فيسبوك */
@@ -2776,6 +2818,7 @@ select.form-control {
   color: var(--color-text-main);
   width: 44px;
   height: 44px;
+  border-radius: 50% !important;
 }
 
 .mobile-drawer-social .social-icon-link:hover {
